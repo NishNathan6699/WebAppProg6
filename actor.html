@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Nishanth's Actor Guess</title>
+</head>
+
+<body>
+
+    <h1>Actors by Nishanth Nathan</h1>
+
+    <form>
+
+        <label for="actor">Peter Pan</label>
+        <input type="password"
+               id="actor"
+               name="actor"
+               value="Robin Williams">
+        <br><br>
+
+        <label for="actorGuess">Who is the actor</label>
+        <input type="text"
+               id="actorGuess"
+               name="actorGuess">
+        <br><br>
+
+        <input type="button"
+               value="Check the guess"
+               onclick="checkActor()">
+
+    </form>
+
+    <p id="result">Correct guesses: 0 Wrong guesses: 0</p>
+
+
+    <script>
+
+        let correct = 0;
+        let notCorrect = 0;
+
+        function checkActor() {
+
+            let actor = document.getElementById("actor").value;
+            let guess = document.getElementById("actorGuess").value;
+
+            if (actor === guess) {
+                correct = correct + 1;
+                alert("That's right");
+            } else {
+                notCorrect = notCorrect + 1;
+                alert("Better luck next time");
+            }
+
+            document.getElementById("result").innerHTML =
+                "Correct guesses: " + correct +
+                " Wrong guesses: " + notCorrect;
+        }
+
+    </script>
+
+</body>
+
+</html>
