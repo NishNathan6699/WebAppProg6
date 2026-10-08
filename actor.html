@@ -33,11 +33,24 @@
 
     <p id="result">Correct guesses: 0 Wrong guesses: 0</p>
 
+    <hr>
+
+    <h2>My Favorite Foods</h2>
+
+    <div>
+        <img id="foodImage"
+             src="food1.jpg"
+             width="150"
+             height="150"
+             onclick="updatePic()">
+    </div>
+
 
     <script>
 
         let correct = 0;
         let notCorrect = 0;
+        let usePic = 1;
 
         function checkActor() {
 
@@ -55,6 +68,30 @@
             document.getElementById("result").innerHTML =
                 "Correct guesses: " + correct +
                 " Wrong guesses: " + notCorrect;
+        }
+
+
+        function updatePic() {
+
+            let image = document.getElementById("foodImage");
+
+            switch (usePic) {
+
+                case 1:
+                    image.src = "food2.jpg";
+                    usePic = 2;
+                    break;
+
+                case 2:
+                    image.src = "food3.jpg";
+                    usePic = 3;
+                    break;
+
+                case 3:
+                    image.src = "food1.jpg";
+                    usePic = 1;
+                    break;
+            }
         }
 
     </script>
